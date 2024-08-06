@@ -1,0 +1,46 @@
+<!-- :nth-child(1)과 :nth-of-type(1) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:nth-child(1)과 :nth-of-type(1) 차이</title>
+    <style>
+        /* :nth-of-type(1) 같은 태그만 순서를 잡는다 */
+        p:nth-of-type(1) {
+            color: red;
+        }
+
+        p:nth-of-type(2) {
+            color: green;
+        }
+
+        .box p:nth-child(1) {
+            background-color: yellow;
+        }
+
+        .box span:nth-child(2) {
+            display: block;
+            background-color: rgb(255, 179, 0);
+        }
+
+        .box p:nth-child(3) {
+            background-color: rgb(14, 234, 254);
+        }
+
+        /* :nth-of-type(1) = 같은태그끼리만 적용 */
+        /* :nth-child(1) = 태그가 달라도 자식의 순서로 스타일 적용 가능 */
+    </style>
+
+</head>
+
+<body>
+    <!-- .box>p*3{anseon$} -->
+    <div class="box">
+        <p>anseon1</p>
+        <span>anseon2</span>
+        <p>anseon3</p>
+    </div>
+</body>
+
+</html>
