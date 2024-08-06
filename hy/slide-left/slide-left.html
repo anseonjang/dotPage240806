@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박하영 - 슬라이드(좌우)</title>
+    <script src="../script/jquery-1.12.3.js"></script>
+
+    <style>
+        * {margin: 0; padding: 0;}
+
+        .slide {
+            width: 305px;
+            height: 250px;
+            background-color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide .slideList {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+        }
+
+        .slide .slideList a img {
+            width: 305px;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slideList">
+            <div class="slideImg">
+                <a href="#">
+                <img src="../images/slide-1.jpg" alt="1">
+                </a>
+            </div>
+            <div class="slideImg">
+                <a href="#">
+                <img src="../images/slide-2.jpg" alt="2">
+                </a>
+            </div>
+            <div class="slideImg">
+                <a href="#">
+                <img src="../images/slide-3.jpg" alt="3">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            var x = 0;
+            setInterval(function(){
+                if (x < 2) {
+                    x++;
+                    } else {
+                    x = 0;
+                }
+                var sp = x * (-305) + "px";
+                $(".slideList").animate({
+                    left: sp
+                }, 400);
+            },3000);
+        });
+    </script>
+</body>
+</html>
